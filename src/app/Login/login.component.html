@@ -1,0 +1,14 @@
+<h4 class="h4"> login page 
+    
+</h4>
+<div>
+    <form [formGroup]="loginForm">
+        <input type="text" name="User Name" placeholder="User Name" formControlName="username">
+        <br />
+        <br />
+        <input type="password" name="password" placeholder="Password" formControlName="password">
+        <br />
+        <br />
+        <button (click)="onSubmit()"> Login </button>
+    </form>
+</div>
