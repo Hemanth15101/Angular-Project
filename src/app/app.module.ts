@@ -5,22 +5,26 @@ import { AppComponent } from './app.component';
 import { logInComponent } from './Login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
   { path: 'login', component: logInComponent },
+  { path: 'dashboard', component: DashboardComponent },
   // { path: 'users', loadChildren: usersModule },
   // { path: 'account', loadChildren: accountModule },
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '/login' }
+
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    logInComponent
+    logInComponent,
+    DashboardComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
