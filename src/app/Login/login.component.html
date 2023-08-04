@@ -1,6 +1,24 @@
-<h4 class="h4"> welcome to login page 
-</h4>
-<div>
+<!-- <h4 class="h4"> welcome to login page  -->
+<!-- </h4> -->
+<div *ngIf="!register">
+    <h1>Register</h1>
+    <form [formGroup]="Registr">
+        <input type="text" name="User Name" placeholder="User Name" formControlName="username">
+        <br />
+        <br />
+        <input type="email" name="Email" placeholder="Email" formControlName="email">
+        <br />
+        <br />
+        <input type="password" name="password" placeholder="Password" formControlName="password">
+        <br />
+        <br />
+        <button (click)="formSubmit()"> Register </button>
+    </form>
+</div>
+
+
+<div *ngIf="register">
+    <h1>Login</h1>
     <form [formGroup]="loginForm">
         <input type="text" name="User Name" placeholder="User Name" formControlName="username">
         <br />
@@ -10,4 +28,5 @@
         <br />
         <button (click)="onSubmit()"> Login </button>
     </form>
+    <h1>{{loginMsg}}</h1>
 </div>
